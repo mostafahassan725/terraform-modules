@@ -5,12 +5,10 @@ resource "aws_s3_bucket" "this" {
     prevent_destroy = var.bucket_prevent_destroy
   }
 
-  tags = {
-    Name        = "${var.env}-bucket"
-  }
+  tags = var.tags
 }
 
-resource "aws_s3_bucket_versioning" "enabled" {
+resource "aws_s3_bucket_versioning" "default" {
   bucket = aws_s3_bucket.this.id
 
   versioning_configuration {
@@ -28,7 +26,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "default" {
   }
 }
 
-resource "aws_s3_bucket_public_access_block" "public_access" {
+resource "aws_s3_bucket_public_access_block" "default" {
   bucket                  = aws_s3_bucket.this.id
   block_public_acls       = var.bucket_block_public_acls
   block_public_policy     = var.bucket_block_public_policy

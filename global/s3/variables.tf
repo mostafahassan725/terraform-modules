@@ -1,8 +1,3 @@
-variable "env" {
-  description = "environment (dev, staging, prod, etc.)"
-  type = string
-}
-
 variable "bucket_name" {
   description = "the globally unique bucket name"
   type = string
@@ -48,4 +43,9 @@ variable "bucket_restrict_public_buckets" {
   description = "restrict public buckets"
   type = bool
   default = true
+}
+
+variable "tags" {
+  description = "map of tags for this resource"
+  type = map(string)
 }
