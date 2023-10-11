@@ -14,7 +14,3 @@ output "db_port" {
 output "db_az" {
   value = aws_db_instance.this.availability_zone
 }
-
-output "db_username" {
-  value = aws_db_instance.this.username
-}
