@@ -1,8 +1,6 @@
 resource "aws_internet_gateway" "this" {
   
-  tags = {
-    Name = "${var.env}-igw"
-  }
+  tags = var.tags
 }
 
 resource "aws_internet_gateway_attachment" "this" {

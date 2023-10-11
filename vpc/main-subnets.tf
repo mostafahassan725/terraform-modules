@@ -5,7 +5,9 @@ resource "aws_subnet" "public" {
     cidr_block        = var.public_subnets_cidr_blocks[count.index]
     availability_zone = var.azs[count.index]
 
-    tags = merge({Name = "${var.env}-public-${var.azs[count.index]}"}, var.public_subnets_tags)
+    tags = merge({Name = "${var.tags.env}-public-${var.azs[count.index]}"}, 
+            var.tags, 
+            var.public_subnets_tags)
 }
 
 resource "aws_subnet" "private" {
@@ -15,5 +17,7 @@ resource "aws_subnet" "private" {
     cidr_block        = var.private_subnets_cidr_blocks[count.index]
     availability_zone = var.azs[count.index]
     
-    tags = merge({Name = "${var.env}-private-${var.azs[count.index]}"}, var.private_subnets_tags)
+    tags = merge({Name = "${var.tags.env}-public-${var.azs[count.index]}"}, 
+            var.tags, 
+            var.public_subnets_tags)
 }

@@ -1,9 +1,7 @@
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.this.id
 
-  tags = {
-    Name = "${var.env}-public"
-  }
+  tags = var.tags
 }
 
 resource "aws_route" "public" {

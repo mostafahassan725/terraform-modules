@@ -1,12 +1,4 @@
-# general variables
-
-variable "env" {
-  description = "environment (dev, staging, prod, etc.)"
-  type = string
-}
-
 # VPC specific variables
-
 variable "vpc_cidr_block" {
   description = "vpc cidr block (10.0.0.0/16, 172.31.0.0/16, 192.168.0.0/20, etc.)"
   type = string
@@ -26,7 +18,6 @@ variable "enable_dns_support" {
 }
 
 # subnets specific variables
-
 variable "public_subnets_cidr_blocks" {
   description = "create public subnets with this list of cidr blocks"
   type = list(string)
@@ -50,4 +41,10 @@ variable "public_subnets_tags" {
 variable "private_subnets_tags" { 
   description = "additional tags for private subnets (usually specific to EKS)"
   type = map(any)
+}
+
+# tags
+variable "tags" {
+  description = "map of tags for this resource"
+  type = map(string)
 }
