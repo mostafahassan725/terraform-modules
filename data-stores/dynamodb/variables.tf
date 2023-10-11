@@ -1,8 +1,3 @@
-variable "env" {
-  description = "environment (dev, staging, prod, etc.)"
-  type = string
-}
-
 variable "dynamodb_table_name" {
   description = "dynamodb table name that is region-unique"
   type = string
@@ -24,4 +19,9 @@ variable "hash_key_type" {
   description = "dynamodb hash key type (S for string, N for number, etc.)"
   type = string
   default = "S"
+}
+
+variable "tags" {
+  description = "map of tags for this resource"
+  type = map(string)
 }

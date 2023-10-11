@@ -8,7 +8,5 @@ resource "aws_dynamodb_table" "this" {
     type = var.hash_key_type
   }
 
-  tags = {
-    Name        = "${var.env}-dynamodb-table"
-  }
+  tags = var.tags
 }
