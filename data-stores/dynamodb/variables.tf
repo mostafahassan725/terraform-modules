@@ -23,5 +23,5 @@ variable "hash_key_type" {
 
 variable "tags" {
   description = "map of tags for this resource"
-  type = map(string)
+  type = map(any)
 }
