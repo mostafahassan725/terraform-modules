@@ -1,12 +1,4 @@
-# general variables
-
-variable "env" {
-  description = "environment (dev, staging, prod, etc.)"
-  type = string
-}
-
 # subnet group specific variables
-
 variable "subnet_group_name" {
   description = "rds db subnet group name"
   type = string
@@ -18,7 +10,6 @@ variable "subnet_ids" {
 }
 
 # rds specific variables
-
 variable "allocated_storage" {
   description = "allocated storage for the db instance"
   type = number
@@ -72,4 +63,10 @@ variable "skip_final_snapshot" {
   description = "skip final snapshot"
   type = bool
   default = true
+}
+
+# tags
+variable "tags" {
+  description = "map of tags for this resource"
+  type = map(any)
 }

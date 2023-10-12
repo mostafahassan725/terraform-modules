@@ -11,7 +11,5 @@ resource "aws_db_instance" "this" {
   parameter_group_name = var.parameter_group_name #"default.mysql5.7"
   skip_final_snapshot  = var.skip_final_snapshot #true
 
-  tags = {
-    Name = "${var.env}-db"
-  }
+  tags = merge({Name = "${var.tags.env}-db"}, var.tags)
 }
