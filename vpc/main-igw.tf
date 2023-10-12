@@ -1,6 +1,6 @@
 resource "aws_internet_gateway" "this" {
   
-  tags = var.tags
+  tags = merge({Name = "${var.tag.dev}-igw"}, var.tags)
 }
 
 resource "aws_internet_gateway_attachment" "this" {
