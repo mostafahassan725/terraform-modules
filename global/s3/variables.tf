@@ -47,5 +47,5 @@ variable "bucket_restrict_public_buckets" {
 
 variable "tags" {
   description = "map of tags for this resource"
-  type = map(string)
+  type = map(any)
 }
