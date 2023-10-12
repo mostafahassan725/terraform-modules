@@ -24,5 +24,5 @@ variable "scan_on_push" {
 # tags
 variable "tags" {
   description = "map of tags for this resource"
-  type = map(string)
+  type = map(any)
 }
