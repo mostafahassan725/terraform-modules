@@ -6,7 +6,7 @@ variable "bucket_name" {
 variable "bucket_prevent_destroy" {
   description = "a terraform attribute to prevent destroy (comment if deletion is needed)"
   type = bool
-  default = true
+  default = false
 }
 
 variable "bucket_versioning" {
