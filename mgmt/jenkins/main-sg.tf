@@ -1,8 +1,8 @@
 #Create security group 
-resource "aws_security_group" "myjenkins_sg" {
-  name        = "jenkins_sg"
+resource "aws_security_group" "jenkins_sg" {
+  name        = "jenkins-sg"
   description = "Allow inbound ports 22, 8080"
-  vpc_id      = "vpc-0e3185f95739a1a24"
+  vpc_id      = var.vpc_id
 
   #Allow incoming TCP requests on port 22 from any IP
   ingress {
@@ -35,4 +35,6 @@ resource "aws_security_group" "myjenkins_sg" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+  tags = merge({Name = "${var.tags.env}-jenkins-sg"}, var.tags)
 }
