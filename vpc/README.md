@@ -6,21 +6,21 @@ This Terraform module creates a VPC, public subnets, private subnets, and intern
 
 ## Inputs:
 
-vpc_cidr_block: The CIDR block for the VPC.
-enable_dns_hostnames: Whether to enable DNS hostnames for instances in the VPC with public IP addresses.
-enable_dns_support: Whether to enable DNS resolution through the Amazon-provided DNS server.
-public_subnets_cidr_blocks: A list of CIDR blocks for the public subnets.
-private_subnets_cidr_blocks: A list of CIDR blocks for the private subnets.
-azs: A list of availability zones in which to create the subnets.
-public_subnets_tags: Additional tags for the public subnets.
-private_subnets_tags: Additional tags for the private subnets.
-tags: A map of tags for the VPC.
+- vpc_cidr_block: The CIDR block for the VPC.
+- enable_dns_hostnames: Whether to enable DNS hostnames for instances in the VPC with public IP addresses.
+- enable_dns_support: Whether to enable DNS resolution through the Amazon-provided DNS server.
+- public_subnets_cidr_blocks: A list of CIDR blocks for the public subnets.
+- private_subnets_cidr_blocks: A list of CIDR blocks for the private subnets.
+- azs: A list of availability zones in which to create the subnets.
+- public_subnets_tags: Additional tags for the public subnets.
+- private_subnets_tags: Additional tags for the private subnets.
+- tags: A map of tags for the VPC.
 
 ## Outputs:
 
-vpc_id: The ID of the VPC.
-public_subnets_ids: A list of IDs for the public subnets.
-private_subnets_ids: A list of IDs for the private subnets.
+- vpc_id: The ID of the VPC.
+- public_subnets_ids: A list of IDs for the public subnets.
+- private_subnets_ids: A list of IDs for the private subnets.
 
 ## Requirements:
 
