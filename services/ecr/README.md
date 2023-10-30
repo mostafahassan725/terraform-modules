@@ -6,17 +6,17 @@ This Terraform module creates an ECR repository. The repository is configured wi
 
 ## Inputs:
 
-ecr_name: The name of the ECR repository.
-image_tag_mutability: The image tag mutability. Can be either MUTABLE or IMMUTABLE.
-encryption_type: The server-side encryption type at rest. Can be either AES256 or KMS.
-scan_on_push: Whether to scan images on push.
-tags: A map of tags for the ECR repository.
+- ecr_name: The name of the ECR repository.
+- image_tag_mutability: The image tag mutability. Can be either MUTABLE or IMMUTABLE.
+- encryption_type: The server-side encryption type at rest. Can be either AES256 or KMS.
+- scan_on_push: Whether to scan images on push.
+- tags: A map of tags for the ECR repository.
 
 ## Outputs:
 
-ecr_arn: The ARN of the ECR repository.
-ecr_id: The ID of the ECR repository.
-ecr_url: The URL of the ECR repository.
+- ecr_arn: The ARN of the ECR repository.
+- ecr_id: The ID of the ECR repository.
+- ecr_url: The URL of the ECR repository.
 
 ## Requirements:
 
