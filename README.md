@@ -7,11 +7,13 @@ services: ECR and EKS modules
 ##Usage
 To use a module, simply copy it into your Terraform project and reference it in your Terraform configuration. For example, to use the VPC module, you would add the following code to your Terraform configuration:
 
-```module "vpc" {
+```
+module "vpc" {
   source = "github.com/mostafahassan725/terraform-modules//vpc?ref=vpc-v0.0.8"
   name = "my-vpc"
   cidr = "10.0.0.0/16"
-}```
+}
+```
 The module will then provision the necessary AWS resources based on the parameters you have provided.
 
 ##Module Documentation
@@ -27,29 +29,35 @@ Here are some examples of how to use the modules in this repository:
 
 VPC:
 Create a VPC with two subnets:
-```module "vpc" {
+```
+module "vpc" {
   source = "github.com/mostafahassan725/terraform-modules//vpc?ref=vpc-v0.0.8"
   name = "my-vpc"
   cidr = "10.0.0.0/16"
   subnets = ["10.0.1.0/24", "10.0.2.0/24"]
-}```
+}
+```
 
 RDS:
 Create an RDS instance for MySQL:
-```module "rds" {
+```
+module "rds" {
   source = "github.com/mostafahassan725/terraform-modules//data-stores/rds?ref=rds-v0.0.3"
   name = "my-rds-instance"
   engine = "mysql"
   engine_version = "5.7"
   allocated_storage = 20
   instance_class = "db.t2.micro"
-}```
+}
+```
 
 ECR:
 Create an ECR repository for storing Docker images:
-```module "ecr" {
+```
+module "ecr" {
   source = "github.com/mostafahassan725/terraform-modules//services/ecr?ref=ecr-v0.0.3"
   name = "my-ecr-repository"
-}```
+}
+```
 
 
