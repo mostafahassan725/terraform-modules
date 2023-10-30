@@ -54,9 +54,15 @@ module "vpc" {
 ```
 Then, run the following command to initialize Terraform and create the VPC and subnets:
 
-```terraform init```
-```terraform plan```
-```terraform apply```
+```
+terraform init
+```
+```
+terraform plan
+```
+```
+terraform apply
+```
 You can then access the VPC ID, public subnet IDs, and private subnet IDs from the module outputs:
 
 ```
