@@ -2,13 +2,13 @@
 
 ## Description:
 
-This Terraform module creates a VPC, public subnets, and private subnets. The VPC is configured with the specified CIDR block, DNS hostnames, and DNS support. The public and private subnets are also configured with the specified CIDR blocks and tags.
+This Terraform module creates a VPC, public subnets, private subnets, and internet gateway. The VPC is configured with the specified CIDR block, DNS hostnames, and DNS support. The public and private subnets are also configured with the specified CIDR blocks and tags.
 
 ## Inputs:
 
 vpc_cidr_block: The CIDR block for the VPC.
 enable_dns_hostnames: Whether to enable DNS hostnames for instances in the VPC with public IP addresses.
-enable_dns_support: Whether to enable DNS resolution through the Amazon provided DNS server.
+enable_dns_support: Whether to enable DNS resolution through the Amazon-provided DNS server.
 public_subnets_cidr_blocks: A list of CIDR blocks for the public subnets.
 private_subnets_cidr_blocks: A list of CIDR blocks for the private subnets.
 azs: A list of availability zones in which to create the subnets.
@@ -33,7 +33,7 @@ To use this Terraform module, create a new Terraform configuration file and add 
 
 ```
 module "vpc" {
-  source = "hashicorp/aws/vpc"
+  source = "github.com/mostafahassan725/terraform-modules//vpc?ref=vpc-v0.0.6"
 
   vpc_cidr_block = "10.0.0.0/16"
   enable_dns_hostnames = true
