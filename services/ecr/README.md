@@ -8,7 +8,7 @@ This Terraform module creates an ECR repository. The repository is configured wi
 
 ecr_name: The name of the ECR repository.
 image_tag_mutability: The image tag mutability. Can be either MUTABLE or IMMUTABLE.
-encryption_type: The server side encryption type at rest. Can be either AES256 or KMS.
+encryption_type: The server-side encryption type at rest. Can be either AES256 or KMS.
 scan_on_push: Whether to scan images on push.
 tags: A map of tags for the ECR repository.
 
@@ -29,7 +29,7 @@ To use this Terraform module, create a new Terraform configuration file and add 
 
 ```
 module "ecr" {
-  source = "hashicorp/aws/ecr"
+  source = "github.com/mostafahassan725/terraform-modules//services/ecr?ref=ecr-v0.0.3"
 
   ecr_name = "my-ecr-repository"
   image_tag_mutability = "MUTABLE"
